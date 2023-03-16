@@ -7,22 +7,23 @@
 
 <template>
   <div class="header">
-    <span class="logo"><NuxtLink to="/"><img src="./assets/logo.png"></NuxtLink></span>
-    <NuxtLink to="/articles/" class="link">Articles</NuxtLink>
-    <NuxtLink to="/contact" class="link">Kontakt</NuxtLink>
+    <div><div class="logo"><NuxtLink to="/"><img src="./assets/logo.png"></NuxtLink></div>
+    <div class="link">Navigacia:<NuxtLink to="/articles/">Articles</NuxtLink> <NuxtLink to="/contact">Kontakt</NuxtLink></div></div>
   </div>
 </template>
 
 <style scoped>
 .header{
+  position: fixed;
+  width: 100%;
+  left: 0;
   padding: 10px;
   background: #1abc9c;
   color: white;
   font-size: 30px;
 }
 .logo{
-  height: 60px;
-  text-align: left;
+  align-content: left;
 }
 .link{
   text-align: right;
