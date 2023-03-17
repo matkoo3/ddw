@@ -7,7 +7,6 @@
   <div>
     <MyHeader></MyHeader>
     <h1>List of articles</h1>
-    <NuxtLink to="/">Return</NuxtLink>
     <div v-for="item of articles" :key="item.id">
       <NuxtLink :to="{path: `/articles/${item.id}`,params:{id: item.id}}">{{ item.title }}</NuxtLink>
     </div>
