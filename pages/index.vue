@@ -4,7 +4,9 @@
 <template>
   <div>
     <MyHeader></MyHeader>
-    
+    <div>Sport</div>
+    <div>Politika</div>
+    <div>Hry</div>
     <MyFooter></MyFooter>
   </div>
 </template>
