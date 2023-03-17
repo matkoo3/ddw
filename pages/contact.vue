@@ -4,6 +4,7 @@
 <template>
   <div>
     <MyHeader></MyHeader>
+    <div class="kontainer">
     <form accept-charset="UTF-8" action="https://www.formbackend.com/f/{your-identifier}" method="POST">
       <div class="form-fields">
         <label for="name">Name</label>
@@ -22,6 +23,7 @@
 
       <button type="submit">Send message</button>
     </form>
+    </div>
     <MyFooter></MyFooter>
   </div>
 </template>
@@ -32,23 +34,23 @@ h1 {
     font-weight: bold;
     margin-bottom: 1rem;
   }
-  .form-fields {
+.form-fields {
     margin-bottom: 1rem;
   }
-  label { 
+label { 
     display: block; 
     margin-bottom: 4px; 
     font-weight: bold; 
     font-size: 0.9rem;
   }
-  input[type="text"], input[type="email"], textarea {
+input[type="text"], input[type="email"], textarea {
     border: 1px solid #ccc;
     font-size: 1rem;
     padding: 6px 10px;
     border-radius: 4px;
-  }
-  body { display: block }
-  button[type="submit"] { 
+}
+body { display: block }
+button[type="submit"] { 
     background-color: rgb(67 56 202);
     color: white;
     font-size: 0.8rem;
