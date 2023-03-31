@@ -9,7 +9,6 @@ let articles = useArticles().list.array;
           <div style="font-size: 35px; font-weight: bold;">{{ article.title }}</div>
           <div><p style="font-size: 24px; text-align: justify;">{{ article.text.substring(0, 300) }}</p></div>
           <div>
-            <div style="color: #CECECE;">ID: {{ article.id }}</div>
             <div><NuxtLink :to="{path:`/articles/${article.id}`, params:{id:article.id}}">detail</NuxtLink></div>
           </div>
         </div>
