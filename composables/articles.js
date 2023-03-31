@@ -73,7 +73,14 @@ const list = reactive({array:[
   },
 ]})
 
+const deleteById = (id) =>{
+  list.array = list.array.filter(item=>item.id!=id);
+}
+
+const editById = (newText, id) =>{
+  list.array.title=newText
+}
 
 export const useArticles = () => {
-  return {list}
+  return {list, deleteById, editById}
 }
