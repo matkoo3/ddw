@@ -2,7 +2,10 @@
 const id = useRoute().params.id
 const articles = useArticles().list.array
 const article = articles.filter(item => item.id == id)[0]
+
+
 const {deleteById, editById} = useArticles();
+
 const editMode = ref(false);
 
 const handleEditWasClicked = () =>{
@@ -11,7 +14,7 @@ const handleEditWasClicked = () =>{
 
 const handleSaveWasClicked = () =>{
   editMode.value = false
-  editById(editedText.value, id)
+  editById(editedTitle.value, editedText.value,  id)
 }
 
 const handleCancelWasClicked = () =>{
@@ -19,6 +22,7 @@ const handleCancelWasClicked = () =>{
 }
 
 const editedTitle = ref(article.title);
+
 const editedText = ref(article.text);
 </script>
 
@@ -27,9 +31,9 @@ const editedText = ref(article.text);
     <MyHeader></MyHeader>
     <div class="clanok">
       <h1 class="nadpis" v-if="!editMode">{{article.title}}</h1>
-      <input v-else v-model="editedTitle" />
-      <div class="text" v-if="!editMode">{{article.text}}</div>
-      <input v-else v-model="editedText" />
+      <textarea class="nadpis" v-else v-model="editedTitle" />
+      <div v-if="!editMode">{{article.text}}</div>
+      <div class="text" v-else><textarea class="text-input" v-model="editedText" /></div>
       <button v-on:click="deleteById(id)" v-if="!editMode" @click="$router.go(-1)">Delete</button>
       <button v-if="!editMode" @click="handleEditWasClicked">Edit</button>
       <div v-else>
@@ -55,6 +59,14 @@ const editedText = ref(article.text);
 .nadpis{
   font-size: 2.5em;
 	font-weight: 700;
+}
+.text{
+  width: 100%;
+}
+.text-input{
+  height: 200px;
+  width: 100%;
+  resize: none;
 }
 .clanok{
   width: 90%;
